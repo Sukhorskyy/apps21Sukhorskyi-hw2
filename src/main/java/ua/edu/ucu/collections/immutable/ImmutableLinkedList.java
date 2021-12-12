@@ -39,7 +39,7 @@ public final class ImmutableLinkedList implements ImmutableList {
         for (int i = 0; i < index; i++) {
             elements[i] = this.get(i);
         }
-        elements[index]=e;
+        elements[index] = e;
         for (int i = index+1; i < numberOfElements+1; i++) {
             elements[i] = this.get(i-1);
         }

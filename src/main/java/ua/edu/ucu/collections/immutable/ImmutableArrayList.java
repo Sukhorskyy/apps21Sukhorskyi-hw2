@@ -34,7 +34,8 @@ public final class ImmutableArrayList implements ImmutableList {
         Object[] newArray = new Object[array.length+c.length];
         System.arraycopy(array, 0, newArray, 0, index);
         System.arraycopy(c, 0, newArray, index, c.length);
-        System.arraycopy(array, index, newArray, index+c.length, array.length-index);
+        System.arraycopy(array, index, newArray,
+                index+c.length, array.length-index);
         return new ImmutableArrayList(newArray);
     }
 
@@ -84,7 +85,7 @@ public final class ImmutableArrayList implements ImmutableList {
 
     @Override
     public boolean isEmpty() {
-        return array.length==0;
+        return array.length == 0;
     }
 
     @Override
