@@ -4,7 +4,8 @@ public final class ImmutableArrayList implements ImmutableList {
     private Object[] array;
 
     public ImmutableArrayList(Object[] elements) {
-        this.array = elements;
+        array = new Object[elements.length];
+        System.arraycopy(elements, 0, array, 0, elements.length);
     }
 
     public ImmutableArrayList() {
@@ -90,6 +91,8 @@ public final class ImmutableArrayList implements ImmutableList {
 
     @Override
     public Object[] toArray() {
-        return array;
+        Object[] newArray = new Object[array.length];
+        System.arraycopy(array, 0, newArray, 0, array.length);
+        return newArray;
     }
 }
